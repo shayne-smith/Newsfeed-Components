@@ -124,24 +124,10 @@ const data = [
 
 */
 
-
-/*
-<div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
-
-    {three separate paragraph elements}
-
-    <span class='expandButton'></span>
-  </div>
-
-*/
-
 const article = document.querySelector('.articles');
 
 function createComponent({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
 
-  debugger
   // instantiate all the elements needed for a panel
   const article = document.createElement('div')
   const articleTitle = document.createElement('h2')
@@ -170,10 +156,12 @@ function createComponent({ title, date, firstParagraph, secondParagraph, thirdPa
   article1.textContent = firstParagraph
   article2.textContent = secondParagraph
   article3.textContent = thirdParagraph
+  expandButton.textContent = 'Expand Button'
 
   // add event listeners
   expandButton.addEventListener('click', event => {
-    article.classList.toggle('article-open')
+    debugger
+    event.target.classList.toggle('article-open')
   })
 
   return article
