@@ -85,6 +85,17 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'COVID-19 Confirmed Cases Exceed 1.4 Million For The Globe',
+    date: 'April 8th, 2020',
+    firstParagraph: `New York announced 779 new deaths from the virus, its highest single-day toll, though the state’s number of hospitalized patients is down. Gov. Andrew M. Cuomo (D) acknowledged progress but cautioned, “It’s not a time to get complacent.”
+    A leading forecasting model used by many states and the White House now estimates tens of thousands fewer covid-19 deaths by August. But a separate report to the White House by a panel of medical experts finds that the coronavirus is unlikely to significantly wane with the arrival of summer.`,
+
+    secondParagraph: `Anthony S. Fauci, the nation’s top infectious-disease official, said Wednesday that “now is not the time to pull back at all” on social distancing; rather, “it’s the time to intensify.” A CNN poll, however, found that almost half of American workers are still regularly leaving home for work.
+    A leading researcher with European Union resigned Wednesday, hours after a 16-hour meeting of E.U. finance ministers failed to reach an emergency relief deal, signaling deep divides within the bloc.`,
+
+    thirdParagraph: `Virus-stricken British Prime Minister Boris Johnson began his third day in intensive care where he “remains clinically stable” and “is responding to treatment,” officials said.`
   }
 ];
 
@@ -173,7 +184,3 @@ console.log(articleElements)
 articleElements.forEach(articleElement => {
   article.appendChild(articleElement)
 })
-
-// for (let i = 0; i < data.length; i++){
-//   createComponent({ title: data[i].title, date: data[i].date, firstParagraph: data[i].firstParagraph, secondParagraph: data[i].secondParagraph, thirdParagraph: data[i].thirdParagraph})
-// }
