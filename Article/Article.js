@@ -112,3 +112,68 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+/*
+<div class="article">
+    <h2>{title of the article}</h2>
+    <p class="date">{date of the article}</p>
+
+    {three separate paragraph elements}
+
+    <span class='expandButton'></span>
+  </div>
+
+*/
+
+const article = document.querySelector('.articles');
+
+function createComponent({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
+
+  debugger
+  // instantiate all the elements needed for a panel
+  const article = document.createElement('div')
+  const articleTitle = document.createElement('h2')
+  const articleDate = document.createElement('p')
+  const article1 = document.createElement('p')
+  const article2 = document.createElement('p')
+  const article3 = document.createElement('p')
+  const expandButton = document.createElement('span')
+
+  // setup the structure of the elements
+  article.appendChild(articleTitle)
+  article.appendChild(articleDate)
+  article.appendChild(article1)
+  article.appendChild(article2)
+  article.appendChild(article3)
+  article.appendChild(expandButton)
+
+  // add classes to the elements
+  article.classList.add('article')
+  articleDate.classList.add('date')
+  expandButton.classList.add('expandButton')
+
+  // add text content to the elements
+  articleTitle.textContent = title
+  articleDate.textContent = date
+  article1.textContent = firstParagraph
+  article2.textContent = secondParagraph
+  article3.textContent = thirdParagraph
+
+  // add event listeners
+  expandButton.addEventListener('click', event => {
+    article.classList.toggle('article-open')
+  })
+
+  return article
+}
+
+const articleElements = data.map(articleData => createComponent(articleData))
+console.log(articleElements)
+articleElements.forEach(articleElement => {
+  article.appendChild(articleElement)
+})
+
+// for (let i = 0; i < data.length; i++){
+//   createComponent({ title: data[i].title, date: data[i].date, firstParagraph: data[i].firstParagraph, secondParagraph: data[i].secondParagraph, thirdParagraph: data[i].thirdParagraph})
+// }
