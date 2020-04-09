@@ -1,5 +1,6 @@
 /* This is the data we will be using to create our article components */
 /* Look over this data, then proceed to line 91*/
+
 const data = [
   {
     title: 'Lambda School Students: "We\'re the best!"',
@@ -85,6 +86,21 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'COVID-19 Status',
+    date: 'April 9, 2020',
+    firstParagraph: `Italy and Spain have started to slow the coronavirus with total lockdowns — but France is yet to feel the effects. Here's how long it's taking to work.`,
+
+    secondParagraph: `Two European countries hit the hardest by the coronavirus have begun to show early signs of the virus slowing, roughly three weeks after the date of their respective lockdowns. 
+
+    Italy, and Spain reported declines in their daily death tolls starting in early April, which have held true for around a week. Their rate of new cases has also fallen.
+    
+    However, in France the lockdown has not produced similarly clear results.`,
+
+    thirdParagraph: `In Spain, it has also taken around 21 days for similar indications to show in the country's death rates and rates of new infection.
+
+    Having gone into lockdown on March 14, the country began a three-day decline in deaths from the virus on April 3, recording 850 deaths. And since Sunday, that figure has hovered around 700. `
   }
 ];
 
@@ -112,3 +128,51 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+const article = document.querySelector('.articles');
+
+function createComponent({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
+
+  // instantiate all the elements needed for an article
+  const article = document.createElement('div')
+  const articleTitle = document.createElement('h2')
+  const articleDate = document.createElement('p')
+  const article1 = document.createElement('p')
+  const article2 = document.createElement('p')
+  const article3 = document.createElement('p')
+  const expandButton = document.createElement('span')
+
+  // setup the structure of the elements
+  article.appendChild(articleTitle)
+  article.appendChild(articleDate)
+  article.appendChild(article1)
+  article.appendChild(article2)
+  article.appendChild(article3)
+  article.appendChild(expandButton)
+
+  // add classes to the elements
+  article.classList.add('article')
+  articleDate.classList.add('date')
+  expandButton.classList.add('expandButton')
+
+  // add text content to the elements
+  articleTitle.textContent = title
+  articleDate.textContent = date
+  article1.textContent = firstParagraph
+  article2.textContent = secondParagraph
+  article3.textContent = thirdParagraph
+  expandButton.textContent = 'Expand'
+
+  // add event listeners
+  expandButton.addEventListener('click', event => {
+    article.classList.toggle('article-open')
+  })
+
+  return article
+}
+
+const articleElements = data.map(articleData => createComponent(articleData))
+
+articleElements.forEach(articleElement => {
+  article.appendChild(articleElement)
+})
