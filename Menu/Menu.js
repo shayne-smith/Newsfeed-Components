@@ -39,11 +39,31 @@ function createMenuComponent(itemsArray){
   // instantiate all the elements needed for a menu item
   const menu = document.createElement('div')
   const ul = document.createElement('ul')
-  const li = document.createElement('li')
 
   // setup the structure of the elements
   menu.appendChild(ul)
-  menuItems.map(ul.appendChild, )
-  ul.appendChild(li)
 
+  // build unordered list structure with several li's
+  itemsArray.forEach(menuItem => {
+    let line = document.createElement('li')
+    line.textContent = menuItem
+    ul.appendChild(line)
+  })
+
+  // add .menu class to menu
+  menu.classList.add('.menu')
+
+  // select menu button using a DOM selector
+  const menuButton = document.querySelector('.menu-button')
+
+  // add click event listener to menu button and toggle '.menu--open' class
+  menuButton.addEventListener('click', () => {
+    menu.classList.toggle('.menu--open')
+  })
+
+  return menu
 }
+
+let updatedMenu = createMenuComponent(menuItems)
+let header = document.querySelector('.header')
+header.appendChild(updatedMenu)
