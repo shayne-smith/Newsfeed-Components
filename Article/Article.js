@@ -128,7 +128,7 @@ const article = document.querySelector('.articles');
 
 function createComponent({ title, date, firstParagraph, secondParagraph, thirdParagraph }) {
 
-  // instantiate all the elements needed for a panel
+  // instantiate all the elements needed for an article
   const article = document.createElement('div')
   const articleTitle = document.createElement('h2')
   const articleDate = document.createElement('p')
