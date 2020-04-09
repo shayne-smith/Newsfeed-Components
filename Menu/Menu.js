@@ -51,14 +51,14 @@ function createMenuComponent(itemsArray){
   })
 
   // add .menu class to menu
-  menu.classList.add('.menu')
+  menu.classList.add('menu')
 
   // select menu button using a DOM selector
   const menuButton = document.querySelector('.menu-button')
 
   // add click event listener to menu button and toggle '.menu--open' class
   menuButton.addEventListener('click', () => {
-    menu.classList.toggle('.menu--open')
+    menu.classList.toggle('menu--open')
   })
 
   return menu

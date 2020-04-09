@@ -86,6 +86,21 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'COVID-19 Status',
+    date: 'April 9, 2020',
+    firstParagraph: `Italy and Spain have started to slow the coronavirus with total lockdowns — but France is yet to feel the effects. Here's how long it's taking to work.`,
+
+    secondParagraph: `Two European countries hit the hardest by the coronavirus have begun to show early signs of the virus slowing, roughly three weeks after the date of their respective lockdowns. 
+
+    Italy, and Spain reported declines in their daily death tolls starting in early April, which have held true for around a week. Their rate of new cases has also fallen.
+    
+    However, in France the lockdown has not produced similarly clear results.`,
+
+    thirdParagraph: `In Spain, it has also taken around 21 days for similar indications to show in the country's death rates and rates of new infection.
+
+    Having gone into lockdown on March 14, the country began a three-day decline in deaths from the virus on April 3, recording 850 deaths. And since Sunday, that figure has hovered around 700. `
   }
 ];
 
@@ -146,11 +161,11 @@ function createComponent({ title, date, firstParagraph, secondParagraph, thirdPa
   article1.textContent = firstParagraph
   article2.textContent = secondParagraph
   article3.textContent = thirdParagraph
-  expandButton.textContent = 'Expand Button'
+  expandButton.textContent = 'Expand'
 
   // add event listeners
   expandButton.addEventListener('click', event => {
-    event.target.classList.toggle('article-open')
+    article.classList.toggle('article-open')
   })
 
   return article
